@@ -1,0 +1,429 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Playfair Display', serif;
+    background-color: #F2E9E4;
+}
+
+ img {
+ 	width: 100%;
+ 	height: auto;
+    display: block;
+ }
+
+/* Navbar */
+
+#navbar {
+    background-color: #904C77;
+    position: fixed;
+    top: -50px;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+    z-index: 100;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#navbar a:hover {
+    background-color: #FFE5E5;
+    color: #904C77;
+}
+
+/* Logo */
+
+.logo h3 {
+    padding:15px 15px 25px;
+    font-size:30px;
+    font-family: 'Parisienne', cursive;
+}
+
+
+/* Header part */
+
+.headerHolder {
+    width: 100%;
+    display: inline-block;
+    padding: 10px;
+}
+
+.headerImg img {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.headerText {
+    float: right;
+    width: 50%;
+}
+
+.headerText h1 {
+    font-family:'Parisienne', cursive;
+    font-size: 81px;
+    line-height: 50px;
+}
+
+.signupBtn {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.signupBtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.signupBtn span::after {
+    content: '》';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 107px;
+    transition: 0.5s;
+}
+
+/* ::after creates a pseudo-element that is the last child of the selected element.
+ It is often used to add cosmetic content to an element with the content property. It is inline by default. */
+
+
+.signupBtn:hover span {
+    padding-right: 25px;
+}
+
+.signupBtn:hover span::after {
+    opacity: 1;
+    right: 0;
+}
+
+.headerImg img {
+    transition: width 1s;
+}
+
+.headerImg img:hover{
+    width: 700px;
+}
+
+.clear {
+    clear: both;
+}
+
+@media only screen and (max-width: 945px)  {
+    .headerHolder .headerText {
+        width: 100%;
+    }
+
+    .headerImg img:hover{
+        width: 500px;
+    }
+    
+
+}
+
+
+/* Four col articles */
+
+.fourCol {
+    display: inline-block;
+}
+
+.fourColImg {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.fourColText {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.fourColText {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 945px) {
+    .fourColImg {
+        width: 100%;
+    }
+    
+    .fourColImg img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .fourColText {
+        width: 100%;
+    }
+}
+
+/* Timeline */
+
+/* the actual timeline (vertical ruler) */
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* z-index: -1; */
+    padding-top: 10px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #A34949;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #DDBCBC;
+    border: 4px solid #863C3C;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #863C3C;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #863C3C;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #DDBCBC;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #DDBCBC transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: whitesmoke;
+    position: relative;
+    border-radius: 6px;
+  }
+
+  .timeline{
+      margin-bottom: 45px;
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+    left: 31px;
+    }
+
+    /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+    }
+
+     /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+    }
+  
+}
+
+/* Subscribe  */
+
+.subForm {
+    background-image: url(https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding: 20px;
+    margin: 0 auto;
+    min-height: 200px;
+}
+
+.form {
+    text-align: center;
+}
+
+.subForm h4 {
+    font-size:40px;
+    margin: 0px;
+}
+
+.subForm p {
+    font-size: 30px;
+}
+
+input[type=email] {
+    width: 600px;
+    padding: 10px 20px;
+    border: 2px solid #393971;
+    border-radius: 15px;
+}
+
+
+.subBtn {
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #5C94FF;
+    color: white;
+    border: none;
+    border-radius: 20px 10px;
+}
+
+
+@media screen and (max-width: 700px) {
+    input[type=email] {
+        width: 100%;
+
+    }
+
+}
+
+/* Footer */
+
+.footer {
+    display:inline-block;
+    color: #7F7597;
+    width: 100%;
+    padding: 10px;
+
+}
+
+.footertext {
+    float: left;
+    width: 33%;
+    padding: 20px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 2px;
+    border-radius: 30px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+  @media screen and (max-width: 600px) {
+    .footertext {
+        width: 100%;
+    }
+  }
+
+
+/* .space {
+    min-height: 1200px;
+} */
